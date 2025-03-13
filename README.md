@@ -5,6 +5,12 @@ version 0.0.1
 
 Debbynote utilises custom markdown syntax to make notetaking for speakers and adjudicators easier, extended syntax highlights arguments, rebuttals and auto-blockquotes speaker positions such as PM and DPM speeches. Can be utilised for British Parliamentary, Asian Parliamentary and Conventional Debating formats.
 
+Debbynote (white mode)
+![Debbynote white mode](/assets/debbynote%20white%20mod.png)
+
+Debbynote (dark mode)
+![Debbynote dark mode](/assets/debbynote%20dark%20mode.png)
+
 ## 🔎 Syntax list
 **general**
 1. !r to highlight a rebuttal
@@ -76,5 +82,7 @@ This will start the application in development mode with hot-reload enabled.
 1. Broken custom blockquote in some of the British Parliamentary syntax highlights
 2. Not all APD speaker blockquotes are finished
 3. The toggle darkmode button is not in the best place
-4. File save option was broken - hence removed
-5. Need to add github releases
+4. Colors in darkmode are non optimised to eye comfort
+5. File save option was broken - hence removed
+6. Need to add github releases
+
