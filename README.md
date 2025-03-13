@@ -5,7 +5,7 @@ version 0.0.1
 
 Debbynote utilises custom markdown syntax to make notetaking for speakers and adjudicators easier, extended syntax highlights arguments, rebuttals and auto-blockquotes speaker positions such as PM and DPM speeches. Can be utilised for British Parliamentary, Asian Parliamentary and Conventional Debating formats.
 
-### 🔎 Syntax list
+## 🔎 Syntax list
 **general**
 1. !r to highlight a rebuttal
 2. !a to highlight an argument
@@ -26,7 +26,7 @@ Debbynote utilises custom markdown syntax to make notetaking for speakers and ad
 2. !dpm to create custom blockqyite of DPM's speech
 3. !gwhip to create custom blockquote of Gov whip's speech
 
-### ⬇️ How to download and use this software
+## ⬇️ How to download and use this software
 
 Currently, as of this date, there is no executables or github releases in the repository yet, which means the only way to download and use Debbynote is git pulling this repo and building from source. 
 
@@ -72,7 +72,7 @@ This will start the application in development mode with hot-reload enabled.
 - [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
 
 
-### ❗️List of issues (as of 13/03/2025):
+## ❗️List of issues (as of 13/03/2025):
 1. Broken custom blockquote in some of the British Parliamentary syntax highlights
 2. Not all APD speaker blockquotes are finished
 3. The toggle darkmode button is not in the best place
