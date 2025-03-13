@@ -105,7 +105,7 @@ const PM_highlight = {
 //custom blockquote highlight for Deputy Prime Minister's speech
 const DPM_highlight = {
     type: 'lang',
-    regex: /!dpm([\s\S]+?)(?=\n\n|$)/g,
+    regex: /!dpm([\s\S]+?)(?=\n\n|$)/g, //type !dpm for custom block quote: Deputy prime minister's speech
     replace: function(match, content){
         return `> ##DPM speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
@@ -113,9 +113,9 @@ const DPM_highlight = {
 
 const Gwhip_highlight = {
     type: 'lang',
-    regex: /!pm([\s\S]+?)(?=\n\n|$)/g,
+    regex: /!gw([\s\S]+?)(?=\n\n|$)/g,
     replace: function(match, content){
-        return `> ##PM speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
+        return `> ##Gov whip speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
 }
 
@@ -125,7 +125,10 @@ const Gwhip_highlight = {
 
 // Create converter instance and add extension
 const converter = new showdown.Converter({
-    extensions: [rebutHighlight, arghighlight, og1_highlight, worldbuildhighlight, og2_highlight, oo1_highlight, oo2_highlight, co1_highlight, co2_highlight, cg1_highlight, cg2_highlight, og1_highlight, og2_highlight, PM_highlight]
+    extensions: [rebutHighlight, arghighlight, og1_highlight, worldbuildhighlight, 
+        og2_highlight, oo1_highlight, oo2_highlight, co1_highlight, co2_highlight, 
+        cg1_highlight, cg2_highlight, og1_highlight, og2_highlight, PM_highlight, 
+    DPM_highlight, Gwhip_highlight]
 });
 
 
