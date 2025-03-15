@@ -2,10 +2,12 @@
 const markdownInput = document.getElementById('markdown-input');
 const markdownPreview = document.getElementById('markdown-preview');
 
+//grabbing the theme-switch button id for the event listener
 // Add this near the top with other constants
 const themeSwitch = document.getElementById('theme-switch');
 
-//! custom extensions for text highlighting
+//! custom extensions for text highlighting, dont forget add any extensions to the showdown converter
+//! or the syntax wont register in the markdown preview.
 //highlighting rebuttals
 const rebutHighlight = {
     type: 'lang',
@@ -79,7 +81,7 @@ const cg2_highlight = {
 const co1_highlight = {
     type: 'lang',
     regex: /!co1([\s\S]+?)(?=\n\n|$)/g,
-    replace: function(match, content){
+    replace: function(match, content){ //type !co1 for custom block function: Closing Oppositin 1st speaker
         return `> ##CG 2nd speech (Opp extension speaker)\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
 }
@@ -87,7 +89,7 @@ const co1_highlight = {
 const co2_highlight = {
     type: 'lang',
     regex: /!co2([\s\S]+?)(?=\n\n|$)/g,
-    replace: function(match, content){
+    replace: function(match, content){ //type !co2 for custom block function: Closing Opposition 2nd speaker
         return `> ##CG 2nd speech (Opp whip)\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
 }
@@ -111,6 +113,7 @@ const DPM_highlight = {
     }
 }
 
+//custom blockquote highlight for Gov whip's speech
 const Gwhip_highlight = {
     type: 'lang',
     regex: /!gw([\s\S]+?)(?=\n\n|$)/g,
@@ -123,7 +126,7 @@ const Gwhip_highlight = {
 
 
 
-// Create converter instance and add extension
+// Create converter instance and add all extension functions
 const converter = new showdown.Converter({
     extensions: [rebutHighlight, arghighlight, og1_highlight, worldbuildhighlight, 
         og2_highlight, oo1_highlight, oo2_highlight, co1_highlight, co2_highlight, 
@@ -133,10 +136,10 @@ const converter = new showdown.Converter({
 
 
 // Set basic options
-converter.setOption('tables', true);
-converter.setOption('strikethrough', true);
-converter.setOption('breaks', true);
-converter.setOption('simpleLineBreaks', true);
+converter.setOption('tables', true); //enables markdown table syntax
+converter.setOption('strikethrough', true); //enables ~~strikethrough~~ text in markdown
+converter.setOption('breaks', true); //enables single line breaks to create new lines, without this you would need two line breaks for a new paragraph
+converter.setOption('simpleLineBreaks', true); //treat single line breaks as <br> without needing two spaces at the end
 
 // Function to update the preview
 function updatePreview() {
