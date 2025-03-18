@@ -95,12 +95,21 @@ const co2_highlight = {
 }
 
 //! blockquote highlighting for APDs
-//custom blockquote highlight for Prime Minister's speech
+//custom blockquote highlight for Prime Minister's speech: type !pm
 const PM_highlight = {
     type: 'lang',
     regex: /!pm([\s\S]+?)(?=\n\n|$)/g,
     replace: function(match, content){
         return `> ##PM speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
+    }
+}
+
+//custom blockquote highlight for Leader of Opposition's speech: type !lo
+const Lo_highlight = {
+    type: 'lang',
+    regex: /!lo([\s\S]+?)(?=\n\n|$)/g,
+    replace: function(match, content){
+        return `> ##LO speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
 }
 
@@ -113,12 +122,30 @@ const DPM_highlight = {
     }
 }
 
+//custom blockquote highlight for DLO's speech
+const DLO_highlight = {
+    type: 'lang',
+    regex: /!dlo([\s\S]+?)(?=\n\n|$)/g, //type !dlo for custom block quote: Deputy prime minister's speech
+    replace: function(match, content){
+        return `> ##DLO speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
+    }
+}
+
 //custom blockquote highlight for Gov whip's speech
 const Gwhip_highlight = {
     type: 'lang',
     regex: /!gw([\s\S]+?)(?=\n\n|$)/g,
     replace: function(match, content){
         return `> ##Gov whip speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
+    }
+}
+
+//custom blockquote highlight for opp whip's speech
+const Owhip_highlight = {
+    type: 'lang',
+    regex: /!ow([\s\S]+?)(?=\n\n|$)/g,
+    replace: function(match, content){
+        return `> ##Opp whip speech\n${content.split('\n').map(line => '> ' + line).join('\n')}`
     }
 }
 
@@ -131,7 +158,7 @@ const converter = new showdown.Converter({
     extensions: [rebutHighlight, arghighlight, og1_highlight, worldbuildhighlight, 
         og2_highlight, oo1_highlight, oo2_highlight, co1_highlight, co2_highlight, 
         cg1_highlight, cg2_highlight, og1_highlight, og2_highlight, PM_highlight, 
-    DPM_highlight, Gwhip_highlight]
+    DPM_highlight, Gwhip_highlight, DLO_highlight, Owhip_highlight, Lo_highlight]
 });
 
 
