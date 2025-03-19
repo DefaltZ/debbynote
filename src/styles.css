@@ -26,22 +26,58 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: space-between;
-  padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    height: 100vh
 }
 
 .editor, .preview {
-  width: 50%;
-  height: 100vh;
-  box-sizing: border-box
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    background-color: var(--editor-bg);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.toolbar-left {
+    display: flex;
+    gap: 10px;
+}
+
+.toolbar-right {
+    display: flex;
+    gap: 10px;
 }
 
 .theme-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+    display: none;
+}
+
+#theme-switch {
+    padding: 6px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+#theme-switch:hover {
+    background-color: var(--border-color);
 }
 
 textarea {
