@@ -182,9 +182,9 @@ updatePreview();
 
 // Add theme toggle functionality
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', newTheme);
+    const currentTheme = document.documentElement.getAttribute('data-theme'); //get the current theme of the window
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark'; //set the new theme to the switched theme, if light mode is detected in currentTheme, set newTheme to dark and vice versa
+    document.documentElement.setAttribute('data-theme', newTheme); //set the value of newTheme to data-theme variable
     
     // Save preference to localStorage
     localStorage.setItem('theme', newTheme);
