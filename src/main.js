@@ -197,3 +197,12 @@ document.documentElement.setAttribute('data-theme', savedTheme);
 // Add event listener for theme toggle, uses the toggleTHeme function when the toggle dark mode button
 //is clicked
 themeSwitch.addEventListener('click', toggleTheme);
+
+//testing save file function
+//test code here..
+
+const saveButton = document.getElementById("save-file");
+saveButton.addEventListener('click', () =>{
+    const saveFileContent = document.getElementById('markdown-input').value
+    console.log(saveFileContent)
+})
