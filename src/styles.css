@@ -10,10 +10,11 @@
 [data-theme="dark"] {
     --bg-color: #1a1a1a;
     --text-color: #fff;
-    --editor-bg: #2d2d2d;
+    --editor-bg: #232832;
     --border-color: #444;
     --blockquote-bg: #333;
     --blockquote-border: #666;
+    --preview-bg: #4a556a;
 }
 
 body {
@@ -27,13 +28,13 @@ body {
 .container {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding-top: 10px;
 }
 
 .editor, .preview {
-  width: 48%;
-  height: 90vh;
-  box-sizing: border-box;
+  width: 50%;
+  height: 100vh;
+  box-sizing: border-box
 }
 
 .theme-toggle {
@@ -61,8 +62,7 @@ textarea {
     height: 100%;
     padding: 10px;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
-    background-color: var(--editor-bg);
+    background-color: var(--preview-bg, #f0ebebfd);
     overflow-y: auto;
     color: var(--text-color);
 }
